@@ -12,10 +12,11 @@ router.get('/:id', (req, res) => {
     res.json(messages.filter(message => message.id === parseInt(req.params.id) ))
 })
 
-// add message
-router.post('/', (req, res) => {
-    messages.push(req.body)
-    res.json(messages)
+// add message route
+router.post('/new', (req, res) => {
+    messages.push({name: req.body.user, message: req.body.message})
+    res.redirect('/')
 })
+
 
 module.exports = router;

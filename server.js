@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
     })
 })
 
+// new message route
+app.get('/new', (req, res) => {
+    res.render("form")
+})
+
 // messages routes
 app.use('/api/messages', require('./routes/messages'))
 
